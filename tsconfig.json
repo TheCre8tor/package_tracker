@@ -22,5 +22,5 @@
     "strictNullChecks": true
   },
   "exclude": ["src/**/*.spec.ts"],
-  "include": ["typings/**/*.d.ts", "src/**/*"]
+  "include": ["express.d.ts", "src/**/*"]
 }

@@ -6,6 +6,9 @@
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/object-curly-spacing": "off",
     "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
     "unicorn/filename-case": [
       "error",
       {
