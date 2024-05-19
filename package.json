@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple way demonstration of package tracking",
   "main": "dist/main.js",
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,7 +13,10 @@
     "start:dev": "nodemon -e ts,json --exec ts-node src",
     "build": "yarn clean && tsc -p ./tsconfig.json",
     "watch": "tsc --watch -p ./tsconfig.json",
-    "test": "jest --runInBand --detectOpenHandles --passWithNoTests --forceExit --coverage"
+    "test": "jest --runInBand --detectOpenHandles --passWithNoTests --forceExit",
+    "test:coverage": "yarn test --coverage",
+    "lint:check": "npx xo",
+    "lint:fix": "npx xo --fix --prettier"
   },
   "dependencies": {
     "reflect-metadata": "^0.2.2"
@@ -28,7 +32,8 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "xo": "^0.58.0"
   },
   "_moduleAliases": {
     "@app": "./dist"

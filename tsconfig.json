@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "commonjs",
-    "lib": ["ESNext", "esnext.asynciterable", "dom"],
+    "module": "CommonJS",
+    "lib": ["ESNext", "esnext.asynciterable"],
     "sourceMap": true,
     "outDir": "dist",
     "rootDir": "src",
@@ -24,7 +24,8 @@
     "emitDecoratorMetadata": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strictNullChecks": true
   },
   "exclude": ["src/**/*.spec.ts"],
   "include": ["typings/**/*.d.ts", "src/**/*"]
