@@ -5,6 +5,12 @@
     "import/extensions": "off",
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/object-curly-spacing": "off",
-    "@typescript-eslint/naming-convention": "off"
+    "@typescript-eslint/naming-convention": "off",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "snakeCase"
+      }
+    ]
   }
 }

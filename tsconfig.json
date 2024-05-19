@@ -12,10 +12,11 @@
     "moduleResolution": "node",
     "baseUrl": "src",
     "paths": {
-      "@app/config/*": ["config/*"],
+      "@app/configs/*": ["configs/*"],
       "@app/http/*": ["http/*"],
       "@app/internal/*": ["internal/*"],
-      "@app/packages": ["packages/"]
+      "@app/packages": ["packages/"],
+      "@app/shared/*": ["shared/core/*"]
     },
     "typeRoots": ["node_modules/@types"],
     "types": ["jest", "node"],
