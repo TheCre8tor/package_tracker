@@ -38,8 +38,5 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "xo": "^0.58.0"
-  },
-  "_moduleAliases": {
-    "@app": "src"
   }
 }

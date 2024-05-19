@@ -11,13 +11,6 @@
     "noUnusedLocals": true,
     "moduleResolution": "node",
     "baseUrl": "src",
-    "paths": {
-      "@app/configs/*": ["configs/*"],
-      "@app/http/*": ["http/*"],
-      "@app/internal/*": ["internal/*"],
-      "@app/packages": ["packages/"],
-      "@app/shared/*": ["shared/core/*"]
-    },
     "typeRoots": ["node_modules/@types"],
     "types": ["jest", "node"],
     "esModuleInterop": true,
