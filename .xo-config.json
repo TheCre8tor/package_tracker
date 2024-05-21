@@ -10,6 +10,8 @@
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "unicorn/prefer-top-level-await": "off",
     "unicorn/filename-case": [
       "error",
       {

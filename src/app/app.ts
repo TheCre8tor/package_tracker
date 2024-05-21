@@ -20,6 +20,7 @@ export class App {
     this.server.use(
       (request: Request, response: Response, next: NextFunction) => {
         bunyan_middleware(request, response, next, this.logger);
+
         next();
       },
     );

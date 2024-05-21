@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: package_tracker-app
+    image: package_tracker-api
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.env
+    environment:
+      - APP__DATABASE_HOST=package-db
+      - APP__DATABASE_PORT=5432
+      - APP__BASE_URL=0.0.0.0
+
+    networks:
+      - backend_network
+    volumes:
+      - ./src:/usr/src/app/src
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: package-db
+    image: postgres:16
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=package_storage
+    networks:
+      - backend_network
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+networks:
+  backend_network:
+    driver: bridge
+
+volumes:
+  postgres_data: {}

@@ -11,20 +11,26 @@
     "start:dev": "nodemon -e ts,json --exec ts-node src | bunyan -o short",
     "start:compact": "nodemon -e ts,json --exec ts-node src",
     "clean": "rimraf dist",
-    "build": "npm-run-all lint format clean && tsc -p ./tsconfig.json",
+    "build": "npm-run-all clean && tsc -p ./tsconfig.json",
     "test": "jest --runInBand --detectOpenHandles --passWithNoTests --forceExit",
     "test:coverage": "yarn test --coverage",
     "lint": "npx xo",
     "lint:fix": "npx xo --fix --prettier",
     "format": "npx prettier --write src",
     "format:check": "npx prettier --check src",
-    "prepare": "husky"
+    "prepare": "husky",
+    "migration:generate": "drizzle-kit generate",
+    "migration:migrate": "drizzle-kit migrate",
+    "migration:revert": "npm run typeorm -- migration:revert",
+    "database:drop": "drizzle-kit drop"
   },
   "dependencies": {
+    "@types/pg": "^8.11.6",
     "bunyan": "^1.8.15",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.10",
     "express": "^4.19.2",
+    "pg": "^8.11.5",
     "postgres": "^3.4.4"
   },
   "devDependencies": {
@@ -43,7 +49,11 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
+    "tsx": "^4.10.5",
     "typescript": "^5.4.5",
     "xo": "^0.58.0"
+  },
+  "_moduleAliases": {
+    "@app": "src"
   }
 }
