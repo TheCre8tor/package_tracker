@@ -1,10 +1,9 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
-import * as schema from './schemas/schema';
-import Config from '../configs/configuration';
 import Logger from 'bunyan';
-
 import { DefaultLogger, LogWriter, Logger as DrizzleLogger } from 'drizzle-orm';
+import Config from '../configs/configuration';
+import * as schema from './schemas/schema';
 
 export class ClassicLogger implements DefaultLogger {
   writer: LogWriter;
@@ -16,7 +15,7 @@ export class ClassicLogger implements DefaultLogger {
     },
   ) {}
 
-  logQuery(query: string, params: unknown[]): void {
+  logQuery(query: string, parameters: unknown[]): void {
     this.logger.info(`${query}`);
   }
 }
